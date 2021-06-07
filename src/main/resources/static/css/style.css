@@ -9,3 +9,31 @@ body {
     padding-bottom: 10px;
     border-radius: 5px;
 }
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.row {
+    margin: auto 10px auto 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-post-container {
+    display: flex;
+    justify-content: center;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    margin: 5px;
+}

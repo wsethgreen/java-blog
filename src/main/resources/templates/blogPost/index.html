@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <title>Blog Site</title>
-    <div th:replace="/fragments/styling :: head-style" ></div>
+    <div th:replace="/fragments/styling :: head-style"></div>
 </head>
 <body>
 <div th:replace="fragments/navbar :: navbar"></div>
@@ -11,7 +11,7 @@
     <h3>Check out our blogs!</h3>
 
     <div class="row">
-        <div th:each="blog:${posts}">
+        <div class="blog-post-container" th:each="blog:${posts}">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -22,15 +22,21 @@
                         <p th:text="${blog.blogEntry}"></p>
                     </div>
                     <div class="panel-footer">
-                        <!-- Link to Update -->
-                        <!-- Link to Show  -->
-
+                        <div class="card-footer">
+                            <a href="#" th:href="@{blogposts/{id}(id=${blog.id})}">
+                                <button class="btn btn-light">Edit Post</button>
+                            </a>
+                            <a href="#" th:href="@{blogposts/delete/{id}(id=${blog.id})}">
+                                <button class="btn btn-danger" type="submit">Delete Post</button>
+                            </a>
+                        </div>
                     </div>
+                    <!-- Link to Show  -->
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div th:replace="/fragments/styling :: body-links" ></div>
+<div th:replace="/fragments/styling :: body-links"></div>
 </body>
 </html>

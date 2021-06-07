@@ -5,6 +5,7 @@
     <div th:replace="/fragments/styling :: head-style" ></div>
 </head>
 <body>
+<div th:replace="fragments/navbar :: navbar"></div>
 <div class="container">
     <h3>Blog Post Form</h3>
     <p>Thank you for your submission!</p>
@@ -18,14 +19,15 @@
     <a th:href="@{/blogposts/new}">
         <button class="btn btn-primary">Submit a New Blog Post</button>
     </a>
+
+    <form action="#" th:action="@{'/blogposts/{id}'(id=${blogPost.id})}" th:method="delete"
+          class="form-horizontal">
+        <div class="form-group">
+            <input type="hidden" name="_method" value="delete"/>
+            <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+        </div>
+    </form>
 </div>
-<form action="#" th:action="@{'/blogposts/{id}'(id=${blogPost.id})}" th:method="delete"
-      class="form-horizontal">
-    <div class="form-group">
-        <input type="hidden" name="_method" value="delete"/>
-        <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
-    </div>
-</form>
 <div th:replace="/fragments/styling :: body-links" ></div>
 </body>
 </html>

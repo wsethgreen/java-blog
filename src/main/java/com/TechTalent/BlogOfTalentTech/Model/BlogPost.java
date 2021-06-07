@@ -3,6 +3,9 @@ package com.TechTalent.BlogOfTalentTech.Model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -27,4 +30,6 @@ public class BlogPost {
         this.blogEntry = blogEntry;
         this.author = author;
     }
+
+
 }
